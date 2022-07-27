@@ -1,0 +1,36 @@
+Mongo Docker image:
+docker pull mongo
+
+Run Mongo docker container:
+Explaination: ist port is local and 2nd port is image port, first name is container and 2nd name is image name
+docker run -d -p 27017:27017 --name shopping-mongo mongo
+
+Docker running containers check command:
+docker ps
+
+Commands to check container logs:
+docker logs -f shopping-mongo
+
+Command to go into the docker container:
+Explaination: it means(interactive terminal)
+docker exec -it shopping-mongo /bin/bash
+
+Check mongo folders command:
+ls
+
+To run mongo commands:
+mongo
+show databases command:
+show dbs
+Create new db command:
+use CatalogDb
+create collection command:
+db.createCollection('Products')
+insert record in Products collection command:
+db.Products.insertMany([{ 'Name':'Asus Laptop','Category':'Computers', 'Summary':'Summary', 'Description':'Description', 'ImageFile':'ImageFile', 'Price':54.93 }, { 'Name':'HP Laptop','Category':'Computers', 'Summary':'Summary', 'Description':'Description', 'ImageFile':'ImageFile', 'Price':88.93 } ])
+get records from Products collection command:
+db.Products.find({}).pretty()
+delete records from Products collection command:
+db.Products.remove({})
+show collections command:
+show collections

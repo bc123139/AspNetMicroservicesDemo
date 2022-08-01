@@ -34,3 +34,6 @@ delete records from Products collection command:
 db.Products.remove({})
 show collections command:
 show collections
+
+Run contqiners locally:
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d

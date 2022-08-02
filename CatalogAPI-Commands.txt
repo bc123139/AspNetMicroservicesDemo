@@ -35,5 +35,10 @@ db.Products.remove({})
 show collections command:
 show collections
 
-Run contqiners locally:
+Run containers locally:
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+Stop all containers which are part of docker compose file:
+docker-compose -f docker-compose.yml -f docker-compose.override.yml down
+
+Downlaod and Run mongoclient in docker container:
+docker run -d -p 3000:3000 mongoclient/mongoclient

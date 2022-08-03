@@ -11,3 +11,15 @@ docker logs -f aspnetrun-redis
 Command to go into the docker container:
 Explaination: it means(interactive terminal)
 docker exec -it aspnetrun-redis /bin/bash
+
+Then go to CLI:
+redis-cli
+Then type ping and hit enter:
+output should be PONG
+
+Command to set key value:
+set key value
+
+
+Command to get value of a key:
+get key

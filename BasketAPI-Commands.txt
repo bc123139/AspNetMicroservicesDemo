@@ -1,0 +1,13 @@
+Redis Docker image:
+docker pull redis
+
+Run Redis docker container:
+Explaination: ist port is local and 2nd port is image port, first name is container and 2nd name is image name
+docker run -d -p 6379:6379 --name aspnetrun-redis redis
+
+Commands to check container logs:
+docker logs -f aspnetrun-redis
+
+Command to go into the docker container:
+Explaination: it means(interactive terminal)
+docker exec -it aspnetrun-redis /bin/bash

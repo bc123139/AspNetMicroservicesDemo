@@ -1,4 +1,6 @@
-﻿namespace Basket.API
+﻿using Basket.API.Repositories;
+
+namespace Basket.API
 {
     public class Startup
     {
@@ -14,6 +16,7 @@
             {
                 options.Configuration = Configuration.GetValue<string>("CacheSettings:ConectionString");
             });
+            services.AddScoped<IBasketRepository, BasketRepository>();
         }
 
 

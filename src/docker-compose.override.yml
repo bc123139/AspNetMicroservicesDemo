@@ -14,6 +14,17 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConectionString=mongodb://catalogdb:27017" #here catlogdb is container name
     depends_on: 
-      - catalogdb # here catalog db is an image name
+      - catalogdb # here catalog db is container name
     ports:
       - "8000:80" #8000 is local port no
+
+  basket.api:
+    container_name: "basket.api"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "CacheSettings:ConectionString=basketdb:6379"
+    depends_on: 
+      - basketdb
+    ports:
+      - "8001:80"
+

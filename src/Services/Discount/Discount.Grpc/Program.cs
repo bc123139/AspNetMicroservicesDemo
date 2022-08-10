@@ -1,3 +1,5 @@
+using Discount.Grpc.Extensions;
+
 namespace Discount.Grpc
 {
     public class Program
@@ -5,6 +7,7 @@ namespace Discount.Grpc
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+            host.MigrateDatabase<Program>();
             host.Run();
         }
 

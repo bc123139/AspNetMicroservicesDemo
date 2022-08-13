@@ -23,3 +23,25 @@ set key value
 
 Command to get value of a key:
 get key
+
+
+PostBasket request for grpc discount:
+{
+  "userName": "swn",
+  "items": [
+    {
+      "quantity": 2,
+      "color": "Red",
+      "price": 500,
+      "productId": "602d2149e773f2a3990b47f5",
+      "productName": "IPhone X"
+    },
+    {
+      "quantity": 1,
+      "color": "Blue",
+      "price": 500,
+      "productId": "602d2149e773f2a3990b47f6",
+      "productName": "Samsung 10"
+    }
+  ]
+}

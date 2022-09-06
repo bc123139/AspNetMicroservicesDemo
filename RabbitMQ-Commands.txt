@@ -1,0 +1,3 @@
+Go to services and stop rabbitmq service (if its installed)
+Disable rabbitmq management:
+rabbitmq-plugins disable rabbitmq_management

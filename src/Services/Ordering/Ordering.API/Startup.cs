@@ -1,4 +1,6 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using EvetBus.Messages.Common;
+using MassTransit;
+using Microsoft.OpenApi.Models;
 using Ordering.Application;
 using Ordering.Infrastructure;
 
@@ -18,7 +20,16 @@ namespace Ordering.API
         {
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
+            services.AddMassTransit(config => {
+                config.AddConsumer<BasketCheckoutConsumer>();
+                config.UsingRabbitMq((ctx, cfg) => {
+                    cfg.Host(Configuration["EventBusSettings:HostAddress"]);
 
+                    cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c => {
+                        c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
+                    });
+                });
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

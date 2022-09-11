@@ -1,6 +1,7 @@
 ﻿using EvetBus.Messages.Common;
 using MassTransit;
 using Microsoft.OpenApi.Models;
+using Ordering.API.EventBusConsumer;
 using Ordering.Application;
 using Ordering.Infrastructure;
 
@@ -30,7 +31,8 @@ namespace Ordering.API
                     });
                 });
             });
-
+            services.AddScoped<BasketCheckoutConsumer>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

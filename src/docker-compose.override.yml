@@ -165,5 +165,3 @@ services:
         - ordering.api
     ports:
       - "8006:80"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
